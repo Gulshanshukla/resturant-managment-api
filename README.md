@@ -82,27 +82,9 @@ Order Management:
 
   ***
   ## Usage
-You can use a tool like POSTMAN or CURL to interact with the API endpoints to perform SWAGGER operations on employees and addresses.
+You can use a tool like POSTMAN or CURL to interact with the API endpoints to perform SWAGGER operations on user fooditems,orde
 
-Example Request (Create an Employee):
 
-POST http://localhost:8080/employees
-Content-Type: application/json
-```json
-
-{
-    "firstName": "John",
-    "lastName": "Doe",
-    "address": {
-        "street": "123 Main St",
-        "city": "Springfield",
-        "state": "IL",
-        "zipcode": "12345"
-    }
-}
-   
-
- ```
 ***
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request.
