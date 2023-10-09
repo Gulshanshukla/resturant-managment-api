@@ -15,7 +15,8 @@
 </a>
 
 
-This project is a simple Employee and Address management system implemented using Spring Boot and JPA (Java Persistence API). It allows you to perform CRUD (Create, Read, Update, Delete) operations on employees and their associated addresses.
+A simple restaurant management system built using Spring Boot for managing users, food items, and orders.
+
 *** 
 
 ## Table of Contents
@@ -27,6 +28,13 @@ This project is a simple Employee and Address management system implemented usin
 - [Contributing](#contributing)
 - [License](#license)
  ***
+### features
+
+- User registration and authentication with different user roles (ADMIN, USER, VISITOR).
+- Admin users can create food items, while normal users can place orders.
+- CRUD operations for users, food items, and orders.
+- Optional features include adding date and time to each entity and a dummy image URL for food items.
+
 
 ## Prerequisites
 
@@ -44,7 +52,7 @@ The project structure is organized as follows:
 - `src/main/java/com/example/employeeaddressapplication/`:
 
 - `controller/`: Contains controller classes for handling HTTP requests and responses.
-- `model/`: Contains the Employee and Address entity classes.
+- `model/`: Contains the user ,order and fooditem entity classes.
 - `repo/`: Contains repository interfaces for database operations.
 - `service/`: Contains service classes for encapsulating business logic.
 - `Application.java`: The main application class.
@@ -54,27 +62,24 @@ application.properties: Configuration file for database settings and other appli
 ***
 ## Endpoints
 The application exposes the following endpoints:
+API Endpoints
+User Management:
 
-### user Endpoints (UserController):
-- `GET /employees`: Get all employees.
-- `GET /employee/id/{id}`: Get an employee by ID.
-- `POST /employees`: Create a new employee.
-- `PUT /update/id/{id}`: Update an employee by ID.
-- `DELETE /delete/employee/id/{id}`: Delete an employee by ID.
-### fooditems Endpoints (Food_ItemController):
-- `GET /addresses`: Get all addresses.
-- `GET /address/id/{id}`: Get an address by ID.
-- `POST /addresses`: Create a new address.
-- `PUT /update/address/id/{id}`: Update an address by ID.
-- `DELETE /delete/address/id/{id}`: Delete an address by ID.
-  ***
-  - `DELETE /delete/employee/id/{id}`: Delete an employee by ID.
-### order Endpoints (OrderController):
-- `GET /addresses`: Get all addresses.
-- `GET /address/id/{id}`: Get an address by ID.
-- `POST /addresses`: Create a new address.
-- `PUT /update/address/id/{id}`: Update an address by ID.
-- `DELETE /delete/address/id/{id}`: Delete an address by ID.
+- `POST /api/users/signup`: Register a new user.
+- `POST /api/users/signin`: Sign in a user.
+- `GET /api/users/list`: Get a list of all users.
+- `GET /api/users/email/{email}`: Find a user by email.
+Food Item Management:
+
+- `POST /api/fooditems/create`: Create a new food item.
+- `GET /api/fooditems/list`: Get a list of all food items.
+Order Management:
+
+- `POST /api/orders/place`: Place a new order.
+- `GET /api/orders/list/{userId}`: Get a list of orders by user.
+
+
+
   ***
   ## Usage
 You can use a tool like POSTMAN or CURL to interact with the API endpoints to perform SWAGGER operations on employees and addresses.
